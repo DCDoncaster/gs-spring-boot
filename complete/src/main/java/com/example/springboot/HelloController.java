@@ -44,16 +44,10 @@ public class HelloController {
 	@GetMapping("gettest")
 	//send reponsebody with requestbody
 	public @ResponseBody String getTest(@RequestBody String data) {
-		
 	Gson gson = new Gson();
 	Map map = gson.fromJson(data, Map.class);
 	map.get("a").getClass();
+	System.out.println(map);
 	return map.get("a").toString();
-	
-
-
-	
-		// return data;
-
 	}
 }

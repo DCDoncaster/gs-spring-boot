@@ -26,4 +26,15 @@ public class HelloControllerTest {
 				.andExpect(status().isOk())
 				.andExpect(content().string(equalTo("Hello Team!")));
 	}
+
+	@Test
+	public void getDouble() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/squarenumber?input=2").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().string(equalTo("4.0")));
+		
+				mvc.perform(MockMvcRequestBuilders.get("/squarenumber?input=4").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().string(equalTo("16.0")));
+	}
 }
