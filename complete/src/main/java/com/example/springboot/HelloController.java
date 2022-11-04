@@ -14,14 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-	@GetMapping("")
-	public String index() {
-		return "Greetings from Spring Boot!";
-	}
 
-	@GetMapping("hello")
+	@GetMapping("")
 	public String hello() {
-		return "Hello Apprentices!";
+		return "Hello Doncaster!";
 	}
 
 	@GetMapping("2add2")
@@ -29,7 +25,7 @@ public class HelloController {
 		
 		return 2 + 2;
 	}
-	@RequestMapping(value = "add", method = RequestMethod.GET)
+	@GetMapping("add")
 	public String data(@RequestBody String data) {
 		return data;
 	}
@@ -39,8 +35,5 @@ public class HelloController {
 				return inputValue * inputValue;
 	}
 
-@GetMapping("error")
-public String errorString() {
-	return "Error";
-}
+
 }
